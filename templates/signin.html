@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Used Car Price Prediction</title>
+  <link rel="icon" type="image/icon" href="{{ url_for('static',filename='img/icon.png') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style-signup-in.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body class="bg-light">
+   <nav class="navbar navbar-expand-sm navbar-dark bar fixed-top">
+    <b><a class="navbar-brand"style="color: yellow !important;">Used Car Price Prediction</a></b>
+  </nav>
+  <header>
+  <div class="container">
+    <div class="banner-text">
+      <div class="text-area">
+        <form action="/validateSignin" method="post" class="shadow-lg p-4">
+          <div class="form-group">
+            <label for="email" class="font-weight-bold">Email:</label>
+            <input type="email" name="email" class="form-control" required="required"><br>
+            <label for="password" class="font-weight-bold">Password:</label>
+            <input type="password" name="password" class="form-control" required="required">
+            
+          </div>
+          <div><h6 style="color: red">{{msg}}</h6></div>
+		  <div><h6 style="color: green">{{mssg}}</h6></div>
+          <div class="banner-btn">
+            <input type="submit" class="button" value = "Log In">
+          </div><br>
+
+		  <p>or <a href="/signup">Sign up</a> here!</p>
+        </form>
+        
+      </div>
+      
+    </div>
+  </div>
+</header>
+<footer class="page-footer bar">
+  
+ <div class="">
+  <div class="container">
+    <div class="row py-4 d-flex align-items-center">
+       
+            <div class="col-md-12 text-center">
+            
+
+            <a href="https://github.com/dinesh5311/UsedCarPricePrediction"><i class="fab fa-github text-white mr-4"></i></a>
+            <a href="https://www.instagram.com/__dinesh__pal__/"><i class="fab fa-instagram text-white mr-4"></i></a>
+            <a href="https://twitter.com/dinesh123pal"><i class="fab fa-twitter text-white mr-4"></i></a>
+            <a href="https://www.linkedin.com/in/dinesh-k-712b9aa0/"><i class="fab fa-linkedin-in text-white mr-4"></i></a>
+            
+
+            
+            </div>
+    </div>      
+  </div>
+ </div>
+
+<div class="container text-center text-md-left mt-5">
+    
+    <div class="row">
+       
+        
+         <div class="col-md-3 mx-auto mb-4">
+         <h6 class="text-light text-uppercase font-weight-bold">About</h6>
+          <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+          <p class="mt-2 text-light m-auto">This model predict the approx price of an used car. The prediction is done on the basis <a href="/about">read more..</a></p>
+        </div>
+    
+        <div class="col-md-2 mx-auto mb-4">
+        <h6 class=" text-light text-uppercase font-weight-bold">CONTENTS</h6>
+           <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+ 
+
+
+        <ul class="list-unstyled ">
+        <li class="my-2 "><a href="/predict" class="text-light">PREDICT</a></li>
+        
+        <li class="my-2 "><a href="/about" class="text-light">ABOUT</a></li>
+        <li class="my-2 "><a href="/team" class="text-light">TEAM</a></li>
+        </ul> 
+         </div>
+     
+         <div class="col-md-2 mx-auto mb-4">
+         <h6 class=" text-light text-uppercase font-weight-bold">CONTACT</h6>
+            <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+         
+         <ul class="list-unstyled">
+             <li class="my-2 "><span class="fas fa-home "></span>
+              <span class="text-light ml-1">GNDEC,Ludhiana </span></li>
+           <li class="my-2 "><span class="fas fa-phone-square-alt"></span>
+            <span class="text-light ml-1">+91 95013 35893</span></li>
+           <li class="my-2"><span class="fa fa-envelope "></span>
+            <span class="text-light ls ml-1" >dinesh123pal@gmail.com</span></li>
+            
+           </ul>
+           
+            
+         </div>
+    </div>
+</div>
+</footer>
+</body>
+<style type="text/css">
+  header
+{
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)),url("{{ url_for('static', filename='img/bgi.jpg') }}");
+  
+
+  }
+   
+
+</style>
+
+
+</html>

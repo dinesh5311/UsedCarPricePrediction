@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title style="color: yellow">Used Car Price Prediction</title>
+  <link rel="icon" type="image/icon" href="{{ url_for('static',filename='img/icon.png') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style-about.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body class="bg-light">
+   <nav class="navbar navbar-expand-sm navbar-dark bar fixed-top">
+    <b><a class="navbar-brand" style="color: yellow !important;">Used Car Price Prediction</a></b>
+    <button type="button" class="navbar-toggler" data-toggle = "collapse" data-target= "#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id = "navMenu">
+      <ul class=" nav navbar-nav navbar-right ml-auto">
+        <li class="nav-item"><a class="nav-link disabled" href="#" style="color: white;">{{session.user}}</a></li>
+        <li class="nav-item"><a class="nav-link" href="/loggedin" style="color: white;">Back</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+  <header>
+  <div class="container">
+    <div class="banner-text">
+      <div class="text-area ">
+        
+        
+        This <b style="color: yellow;">Used Car Price Prediction</b> model predict the approx price of an used car. The prediction is done on the basis of various criteria like manufacturing year of car ,engine type ,kilometer driven etc.The dataset of used car is taken from <a href="https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho">kaggle</a>. By using Machine Learning, the dataset is trained and test in 8:2 ratio. We use <b style="color: #a19a15;">Random Forest Regressor Model</b> to predict the price of used car. This model gives about 84 % of accuracy ,which is good enough.
+      </div>
+      
+    </div>
+  </div>
+</header>
+<footer class="page-footer bar">
+  
+ <div class="">
+  <div class="container">
+    <div class="row py-4 d-flex align-items-center">
+       
+            <div class="col-md-12 text-center">
+            
+
+            <a href="https://github.com/dinesh5311/UsedCarPricePrediction"><i class="fab fa-github text-white mr-4"></i></a>
+            <a href="https://www.instagram.com/__dinesh__pal__/"><i class="fab fa-instagram text-white mr-4"></i></a>
+            <a href="https://twitter.com/dinesh123pal"><i class="fab fa-twitter text-white mr-4"></i></a>
+            <a href="https://www.linkedin.com/in/dinesh-k-712b9aa0/"><i class="fab fa-linkedin-in text-white mr-4"></i></a>
+            
+
+            
+            </div>
+    </div>      
+  </div>
+ </div>
+
+<div class="container text-center text-md-left mt-5">
+    
+    <div class="row">
+       
+        
+         
+    
+        <div class="col-md-2 mx-auto mb-4">
+        <h6 class=" text-light text-uppercase font-weight-bold">CONTENTS</h6>
+           <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+ 
+
+
+        <ul class="list-unstyled ">
+        <li class="my-2 "><a href="/predict" class="text-light">PREDICT</a></li>
+        
+        
+        <li class="my-2 "><a href="/team" class="text-light">TEAM</a></li>
+        </ul> 
+         </div>
+     
+         <div class="col-md-2 mx-auto mb-4">
+         <h6 class=" text-light text-uppercase font-weight-bold">CONTACT</h6>
+            <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+         
+         <ul class="list-unstyled">
+             <li class="my-2 "><span class="fas fa-home "></span>
+              <span class="text-light ml-1">GNDEC,Ludhiana </span></li>
+           <li class="my-2 "><span class="fas fa-phone-square-alt"></span>
+            <span class="text-light ml-1">+91 95013 35893</span></li>
+           <li class="my-2"><span class="fa fa-envelope "></span>
+            <span class="text-light ls ml-1" >dinesh123pal@gmail.com</span></li>
+            
+           </ul>
+           
+            
+         </div>
+    </div>
+</div>
+</footer>
+</body>
+<style type="text/css">
+header
+{
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)),url("{{ url_for('static', filename='img/bgi.jpg') }}");
+  }
+
+</style>
+</html>

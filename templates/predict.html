@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Used Car Price Prediction</title>
+  <link rel="icon" type="image/icon" href="{{ url_for('static',filename='img/icon.png') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style-predict.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body class="bg-light">
+   <nav class="navbar navbar-expand-sm navbar-dark bar fixed-top">
+    <b><a class="navbar-brand" style="color: yellow !important;">Used Car Price Prediction</a></b>
+    <button type="button" class="navbar-toggler" data-toggle = "collapse" data-target= "#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id = "navMenu">
+      <ul class=" nav navbar-nav navbar-right ml-auto">
+      	<li class="nav-item"><a class="nav-link disabled" style="color: white;">{{session.user}}</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about" style="color: white;">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/loggedin" style="color: white;" >Back</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout" style="color: white;">Log Out</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+<header>
+	<form action="/validatepredict"  method="post">
+	<div class="container">
+		<div class="row mt-5"></div>
+		<div class="row mt-4 d-flex justify-content-center">
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Model Year:</label><br><input type="text" class="form-control" name="model_year" required="required" placeholder="min year value 2000"><div><h6 style="color: red">{{msg}}</h6></div><br>
+			</div>
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Showroom Price:</label><br><input type="text" class="form-control" name="Present_Price" placeholder="in Lakhs" required="required"><div><h6 style="color: red">{{mssg}}</h6></div><br>
+			</div></div>
+		<div class="row mt-2 d-flex justify-content-center">
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Kms Driven:</label><br><input type="text" class="form-control" name="Kms_Driven" required="required"><br>
+			</div>
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Fuel Type:</label><br>
+				    <select name="Fuel_Type_CNG" class="form-control" required="required">
+				      <option value="Petrol">Petrol</option>
+				      <option value="Diesel">Diesel</option>
+				      <option value="CNG">CNG</option>
+				    </select><br>
+			</div>	</div>
+			
+		<div class="row mt-2 d-flex justify-content-center">
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Transmission Type:</label><br>
+				    <select name="Transmission_Manual" class="form-control" required="required">
+				      <option value="Manual">Manual</option>
+				      <option value="Automatic">Automatic</option>
+				    </select><br>
+			</div>
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Owner No:</label><br><input type="text" class="form-control" name="Owner" required="required"><br>
+			</div></div>
+			<div class="row mt-2 d-flex justify-content-center">
+			<div class="col-sm-4 pl-5 pr-5">
+				<label>Seller Type:</label><br>
+					    <select name="Seller_Type_Dealer" class="form-control" required="required">
+					      <option value="Dealer">Dealer</option>
+					      <option value="Individual">Individual</option>
+					    </select><br><br>
+			
+			</div></div>
+			 <div class="row mt-2 d-flex justify-content-center">
+			 
+
+			<div class="banner-btn">
+            <input type="submit" class="button" value = "Predict">
+          </div><br></div>
+		</div>
+
+
+			
+		
+	</div>
+	</form>
+  
+</header>
+<footer class="page-footer bar">
+  
+ <div class="">
+  <div class="container">
+    <div class="row py-4 d-flex align-items-center">
+       
+            <div class="col-md-12 text-center">
+            
+
+            <a href="https://github.com/dinesh5311/UsedCarPricePrediction"><i class="fab fa-github text-white mr-4"></i></a>
+            <a href="https://www.instagram.com/__dinesh__pal__/"><i class="fab fa-instagram text-white mr-4"></i></a>
+            <a href="https://twitter.com/dinesh123pal"><i class="fab fa-twitter text-white mr-4"></i></a>
+            <a href="https://www.linkedin.com/in/dinesh-k-712b9aa0/"><i class="fab fa-linkedin-in text-white mr-4"></i></a>
+            
+
+            
+            </div>
+    </div>      
+  </div>
+ </div>
+
+<div class="container text-center text-md-left mt-5">
+    
+    <div class="row">
+       
+        
+         <div class="col-md-3 mx-auto mb-4">
+         <h6 class="text-light text-uppercase font-weight-bold">About</h6>
+          <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+          <p class="mt-2 text-light m-auto">This model predict the approx price of an used car. The prediction is done on the basis <a href="/about">read more..</a></p>
+        </div>
+    
+        <div class="col-md-2 mx-auto mb-4">
+        <h6 class=" text-light text-uppercase font-weight-bold">CONTENTS</h6>
+           <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+ 
+
+
+        <ul class="list-unstyled ">
+        
+        
+        <li class="my-2 "><a href="/about" class="text-light">ABOUT</a></li>
+        <li class="my-2 "><a href="team" class="text-light">TEAM</a></li>
+        </ul> 
+         </div>
+     
+         <div class="col-md-2 mx-auto mb-4">
+         <h6 class=" text-light text-uppercase font-weight-bold">CONTACT</h6>
+            <hr class=" bg-warning mb-4 d-inline-block mx-auto" style="width: 85px ;height: 2px" >
+         
+         <ul class="list-unstyled">
+             <li class="my-2 "><span class="fas fa-home "></span>
+              <span class="text-light ml-1">GNDEC,Ludhiana </span></li>
+           <li class="my-2 "><span class="fas fa-phone-square-alt"></span>
+            <span class="text-light ml-1">+91 9501335893</span></li>
+           <li class="my-2"><span class="fa fa-envelope "></span>
+            <span class="text-light ls ml-1" >dinesh123pal@gmail.com</span></li>
+            
+           </ul>
+           
+            
+         </div>
+                
+  
+
+
+
+    </div>
+</div>
+
+
+
+
+
+</footer>
+</body>
+<style type="text/css">
+  header{
+    
+  background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6)),url("{{ url_for('static', filename='img/bgi.jpg') }}");
+  }
+
+</style>
+
+
+</html>

@@ -1,0 +1,47 @@
+.header{  height:140vh;
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-position: center center;
+
+  }
+  .banner-text{
+    color: #fff;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    text-align: center ;
+
+  }
+   .bar{
+    background-color: black;
+  }
+  .banner-btn {
+    border:  1px solid #fff;
+    border-radius: 50px;
+    border-color: yellow;
+    text-decoration: none;
+    padding: 10px 50px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+  }
+  a:hover{
+    color: yellow;
+  }
+  i:hover{
+    color: yellow;
+
+  }
+  .cd{
+    background-color: transparent;
+  }
+   @media(min-width:700px){
+    .ls{
+      position: absolute;
+
+    }
+    .header{
+      height:90vh;
+      }
